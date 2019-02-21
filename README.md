@@ -13,4 +13,5 @@ var result = cache(func, "v1", "v2")
 ```
 
 ### Requirements
-* sbt (get it at http://www.scala-sbt.org/)
+* sbt   (get it at http://www.scala-sbt.org/)
+* redis (get it at http://redis.io)
