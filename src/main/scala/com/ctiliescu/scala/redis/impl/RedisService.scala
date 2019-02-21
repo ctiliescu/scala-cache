@@ -1,14 +1,26 @@
 package com.ctiliescu.scala.redis.impl
 
 class RedisService {
-  private def getCachedValue[T](args: Any*): Option[T] = {
+  def optimiseOp[T](elem: => T, args: Any*): T = {
     val key: String = args
+
+    getCachedValue(key, args) match {
+      case Some(e) => e
+      case None =>
+        val x = elem
+        setCachedValue(key, x, args)
+    }
+  }
+
+  private def getCachedValue[T](key: String, args: Any*): Option[T] = {
+    println("get")
     // TODO - add implementation
     None
   }
 
-  private def setCachedValue[T](obj: T, args: Any*) = {
-    val key: String = args
+  private def setCachedValue[T](key: String, obj: T, args: Any*): T = {
+    println("post")
+    obj
     // TODO - add implementation
   }
 
