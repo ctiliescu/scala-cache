@@ -1,4 +1,4 @@
-name := "scala-redis"
+name := "scala-cache"
 
 version := "0.1"
 
