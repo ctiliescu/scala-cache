@@ -16,7 +16,7 @@ class RedisService {
 
   private def getCachedValue[T](key: String, args: Any*)(implicit en: Decoder[T]): Option[T] = {
     // TODO - add implementation with real redis client
-    MockedRedis.m.get(key).flatMap(toObject)
+    MockedRedis.m.get(key).flatMap(e => toObject(e))
   }
 
   private def setCachedValue[T](key: String, obj: T, args: Any*)(implicit de: Encoder[T]): T = {
