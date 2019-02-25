@@ -8,3 +8,10 @@ scalaVersion := "2.12.8"
 val circeVersion = "0.11.0"
 libraryDependencies ++= Seq("io.circe" %% "circe-core", "io.circe" %% "circe-generic", "io.circe" %% "circe-parser")
   .map(_ % circeVersion)
+
+// redis integration
+libraryDependencies ++= Seq("net.debasishg" %% "redisclient" % "3.9")
+
+// enable the formatter on compile and running tests
+scalafmtOnCompile in ThisBuild := true
+scalafmtTestOnCompile in ThisBuild := true
