@@ -1,9 +1,11 @@
 package com.ctiliescu.scala.redis
 
-import com.ctiliescu.scala.redis.CacheComposer._
+import com.ctiliescu.scala.redis.model.RedisConfig
 
 // TODO - delete this class
-object Bootstrap extends App {
+object Bootstrap extends App with CacheComposer {
+  override val conf = RedisConfig("localhost", 6379)
+
   // used only for tests
   def test(c: Int, b: String): String = {
     println(b + "  --  " + c)
