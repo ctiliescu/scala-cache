@@ -1,6 +1,8 @@
 name := "scala-cache"
 
-version := "0.1"
+organization := "io.github.ctiliescu"
+
+version := "0.2"
 
 scalaVersion := "2.12.8"
 
@@ -16,11 +18,7 @@ libraryDependencies ++= Seq("net.debasishg" %% "redisclient" % "3.9")
 scalafmtOnCompile in ThisBuild := true
 scalafmtTestOnCompile in ThisBuild := true
 
-useGpg := true
-pgpReadOnly := false
-
 // POM settings for Sonatype
-organization := "com.ctiliescu"
 homepage := Some(url("https://github.com/ctiliescu/scala-cache"))
 scmInfo := Some(ScmInfo(url("https://github.com/ctiliescu/scala-cache"), "git@github.com:ctiliescu/scala-cache.git"))
 developers := List(
@@ -35,3 +33,7 @@ publishTo := Some(
   else
     Opts.resolver.sonatypeStaging
 )
+
+publishMavenStyle := true
+publishConfiguration := publishConfiguration.value.withOverwrite(true)
+publishLocalConfiguration := publishLocalConfiguration.value.withOverwrite(true)
