@@ -15,7 +15,8 @@ libraryDependencies ++= Seq(
 
 ### Usage
 ____
-To be able to cache the function results, the CacheCompuser should be mixed and defined 
+To be able to cache the function results, the CacheCompuser should be mixed and defined the RedisConfig properties(address and port).
+
 ```scala
 class Test extends CacheComposer {
   override val conf = RedisConfig("localhost", 6379)
